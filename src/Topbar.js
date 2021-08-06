@@ -1,6 +1,8 @@
 import React from "react";
+import { useGlobalContext } from "./userContext";
 
 function Topbar() {
+  const { profileuserData } = useGlobalContext();
   return (
     <>
       <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -161,11 +163,11 @@ function Topbar() {
               aria-expanded="false"
             >
               <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                Steve Jobs
+                {profileuserData.name}
               </span>
               <img
                 class="img-profile rounded-circle"
-                src="stevejobs.jpg"
+                src={profileuserData.photo}
                 alt=""
               />
             </a>
